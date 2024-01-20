@@ -86,11 +86,9 @@ while True:
                 cmpt+=1
                 if intersection.geom_type == 'Point':
                     intersection_point = (int(intersection.x), int(intersection.y))
-                    print(print(f"Collision detected at point: {intersection_point}"))
                     break
 
-        if cmpt >1:
-            pygame.draw.line(screen, color1, square_rect.center, (intersection_point[0], intersection_point[1]), 1)
+        pygame.draw.line(screen, color1, square_rect.center, (intersection_point[0], intersection_point[1]), 1)
 
     pygame.display.flip()
     pygame.time.Clock().tick(60)
